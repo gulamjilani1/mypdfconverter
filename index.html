@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image to PDF Converter</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Watermark -->
+  <div class="watermark">© Gulam Jilani</div>
+
+  <div class="container">
+    <header>
+      <h1>Image to PDF Converter</h1>
+      <p class="subtitle">Convert your images to PDF with preview and download options</p>
+    </header>
+
+    <div class="content">
+      <div class="section">
+        <h2>Upload Images</h2>
+        <div class="upload-area" id="uploadArea">
+          <div class="upload-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          <p class="upload-text">Drag & drop images here or click to browse</p>
+          <button class="btn" id="browseBtn">Select Images</button>
+          <input type="file" id="fileInput" multiple accept="image/*" />
+        </div>
+
+        <div id="preview"></div>
+
+        <div class="selected-images">
+          <h3>Selected Images</h3>
+          <ul class="image-list" id="imageList">
+            <li class="image-item empty">No images selected</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PDF Settings -->
+      <div class="section">
+        <h2>PDF Settings</h2>
+        <label>Page Orientation:
+          <select id="orientation">
+            <option value="portrait">Portrait</option>
+            <option value="landscape">Landscape</option>
+          </select>
+        </label>
+        <br/><br/>
+        <label>Page Size:
+          <select id="pageSize">
+            <option value="a4">A4</option>
+            <option value="letter">Letter</option>
+            <option value="a3">A3</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="section actions">
+        <button class="btn" id="convertBtn">Convert to PDF</button>
+        <button class="btn" id="resetBtn">Reset</button>
+        <a class="btn" id="downloadBtn" style="display:none;">Download PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>Last updated: September 7, 2025</footer>
+  <script src="script.js"></script>
+</body>
+</html>
